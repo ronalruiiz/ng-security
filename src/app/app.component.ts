@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NessusService } from './services/nessus.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ng-security';
+  constructor(private nessusService: NessusService){
+    // this.nessusService.login().subscribe(e=>{
+    //   console.log(e)
+    // })
+  }
 }

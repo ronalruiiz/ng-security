@@ -1,0 +1,17 @@
+{
+    "/session/*":{
+        "target":"https://nunra.codes:8834",
+        "secure":false,
+        "changeOrigin":true
+    },
+    "/scans/*":{
+        "target":"https://nunra.codes:8834",
+        "secure":false,
+        "changeOrigin":true
+    },
+    "/scans/**/**":{
+        "target":"https://nunra.codes:8834",
+        "secure":false,
+        "changeOrigin":true
+    }
+}

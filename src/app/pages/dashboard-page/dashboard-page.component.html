@@ -1,0 +1,19 @@
+<mat-toolbar color="primary" >Security Ng</mat-toolbar>
+<mat-sidenav-container autosize>
+  <mat-sidenav style="width:270px;" mode="side" opened>
+      <mat-nav-list>
+          <h2 matSubheader> Operations </h2>
+          <a [routerLinkActive]="'list-item-active'"
+             [routerLinkActiveOptions]="{exact: true}" [routerLink]="['']" mat-list-item>
+              <mat-icon class="mqtt-side-icons" matListIcon> dashboard </mat-icon> Inicio
+          </a>
+          <a [routerLinkActive]="'list-item-active'"
+             [routerLinkActiveOptions]="{exact: true}" [routerLink]="['/scan']" mat-list-item>
+              <mat-icon class="mqtt-side-icons" matListIcon> book </mat-icon> Scans
+          </a>
+      </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content role="main">
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,0 +1,41 @@
+<div style="width: 95%;margin: 0 auto;margin-top:25px;">
+    <h3>Escaneos de puerto
+        <mat-icon>assignment</mat-icon>
+    </h3>
+    <table mat-table [dataSource]="dataSource">
+        <!-- Position Column -->
+        <ng-container matColumnDef="user">
+            <mat-header-cell *matHeaderCellDef> Usuario</mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.owner}} </mat-cell>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="name">
+            <mat-header-cell *matHeaderCellDef> Nombre</mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+        </ng-container>
+
+        <!-- Weight Column -->
+        <ng-container matColumnDef="creation_date">
+            <mat-header-cell *matHeaderCellDef> Fecha</mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.creation_date * 1000|date: 'yyyy-MM-dd HH:mm:ss  '}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="status">
+            <mat-header-cell *matHeaderCellDef> Estado</mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.status}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="action">
+            <mat-header-cell *matHeaderCellDef> Ejecutar</mat-header-cell>
+            <mat-cell *matCellDef="let element">
+                <button (click)="executeScan(element)" mat-icon-button aria-label="Example icon-button with a heart icon">
+                    <mat-icon>send</mat-icon>
+                </button>
+            </mat-cell>
+        </ng-container>
+
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </table>
+
+</div>
